@@ -1,8 +1,9 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
 schema_version: 1
 
 context:
   name: DataProfiler
-  version: 0.13.4
+  version: "0.13.4"
 
 package:
   name: ${{ name|lower }}
@@ -46,7 +47,7 @@ requirements:
     #### requirements.txt
     - typing_extensions >=3.10.0.2
     - versioneer
-    - python >=${{ python_min }}
+    - python >=${{ python_min }},<4.0
     - h5py >=2.10.0
     - wheel >=0.33.1
     - numpy <2.0.0
@@ -74,12 +75,7 @@ tests:
         - dataprofiler
         - resources
       python_version: ${{ python_min }}.*
-  - requirements:
-      run:
-        - pip
-        - python ${{ python_min }}.*
-    script:
-      - pip check
+      pip_check: true
 
 about:
   summary: What is in your data? Detect schema, statistics and entities in almost any file.
