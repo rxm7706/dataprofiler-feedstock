@@ -61,7 +61,7 @@ requirements:
     - charset-normalizer >=1.3.6
     - psutil >=4.0.0
     - scipy >=1.10.0
-    - requests ==2.32
+    - requests >=2.32
     - networkx >=2.5.1
     - typing-extensions >=3.10.0.2
     - hll >=2.0.3
